@@ -44,6 +44,14 @@ if (!isset($_SESSION["Mikbotamuser"])) {
 		include "servers.php";
 	} else
 
+	if ($_GET["Mikbotam"] == "AddServers") {
+		include "addservers.php";
+	} else
+
+	if ($_GET["Mikbotam"] == "ListServers") {
+		include "listservers.php";
+	} else
+
 	if ($_GET["Mikbotam"] == "Settings") {
 		include "settings.php";
 	} else

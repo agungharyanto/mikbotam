@@ -203,7 +203,6 @@
           <li class="nav-item"><a class="nav-link <?=$ListServers;?>" href="?Mikbotam=ListServers"><i class="fa fa-th-list "></i> List Server</a></li>
         </ul>
 
-
         <a href="#" class="sl-menu-link <?=$Settings . $SettingsVoc . " " . $sshow;?>" >
           <div class="sl-menu-item">
             <i class="menu-item-icon fa  fa-cogs tx-16"></i>
