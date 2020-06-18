@@ -40,6 +40,10 @@ if (!isset($_SESSION["Mikbotamuser"])) {
 		include "sendvoc.php";
 	} else
 
+	if ($_GET["Mikbotam"] == "Servers") {
+		include "servers.php";
+	} else
+
 	if ($_GET["Mikbotam"] == "Settings") {
 		include "settings.php";
 	} else

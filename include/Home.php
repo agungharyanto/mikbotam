@@ -70,6 +70,9 @@
     } elseif ($page == "Settings") {
         $sshow    = "show-sub";
         $Settings = "active";
+    } elseif ($page == "Servers") {
+      $sshow       = "show-sub";
+      $SettingsVoc = "active";
     } elseif ($page == "SettingsVoc") {
         $sshow       = "show-sub";
         $SettingsVoc = "active";
@@ -188,6 +191,18 @@
           <li class="nav-item"><a class="nav-link <?=$vouchergraph;?>" href="?Mikbotam=comingsoon"><i class="fa fa-file "></i> Voucher</a></li>
         </ul>
 
+        <a href="#" class="sl-menu-link <?=$AddServers . $ListServers . " " . $sshow;?>" >
+          <div class="sl-menu-item">
+            <i class="menu-item-icon fa  fa-server tx-16"></i>
+            <span class="menu-item-label"> Servers</span>
+            <i class="menu-item-arrow fa fa-angle-down"></i>
+          </div><!-- menu-item -->
+        </a>
+        <ul class="sl-menu-sub nav flex-column">
+          <li class="nav-item"><a class="nav-link <?=$AddServers;?>" href="?Mikbotam=AddServers"><i class="fa fa-plus-circle "></i> Add Server</a></li>
+          <li class="nav-item"><a class="nav-link <?=$ListServers;?>" href="?Mikbotam=ListServers"><i class="fa fa-th-list "></i> List Server</a></li>
+        </ul>
+
 
         <a href="#" class="sl-menu-link <?=$Settings . $SettingsVoc . " " . $sshow;?>" >
           <div class="sl-menu-item">
@@ -197,11 +212,10 @@
           </div><!-- menu-item -->
         </a>
         <ul class="sl-menu-sub nav flex-column">
-        <li class="nav-item"><a class="nav-link <?=$Settings;?>" href="?Mikbotam=Settings"><i class="fa fa-cog "></i> Settings</a></li>
+          <li class="nav-item"><a class="nav-link <?=$Settings;?>" href="?Mikbotam=Settings"><i class="fa fa-cog "></i> Settings</a></li>
           <li class="nav-item"><a class="nav-link <?=$SettingsVoc;?>" href="?Mikbotam=SettingsVoc"><i class="fa fa-ticket "></i> Settings Voucher</a></li>
            <li class="nav-item"><a class="nav-link <?=$SettingsVocnonsaldos;?>" href="?Mikbotam=SettingsVocnonsaldo"><i class="fa fa-ticket "></i> Settings Voucher Non saldo</a></li>
           <li class="nav-item"><a class="nav-link " href="?Mikbotam=comingsoon"><i class="fa  fa-pencil-square-o "></i> Text Settings</a></li>
-
         </ul>
         <a href="#" class="sl-menu-link  <?=$toolsshow;?> ">
           <div class="sl-menu-item">
