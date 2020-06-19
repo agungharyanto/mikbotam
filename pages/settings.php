@@ -43,15 +43,11 @@
 			if (empty($viewid)) {
 				$make = inbot($id, $token, $usernamebot, $namarouter, $ipmik, $usernamemik, $passmik, $port, $dns, $owner, $idowner);
 			} else {
-
 				$dump = upbot($id, $token, $usernamebot, $namarouter, $ipmik, $usernamemik, $passmik, $port, $dns, $owner, $idowner);
-				
 			}
 			unset($settings);
 		}
-
 		include '../config/system.conn.php';
-
 	}
 
 ?>

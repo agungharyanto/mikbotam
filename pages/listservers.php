@@ -58,7 +58,15 @@ if (!isset($_SESSION["Mikbotamuser"])) {
         $hddpersen     = number_format($hdd, 3);
         $sector        = $first['write-sect-total'];
         $setelahreboot = $first['write-sect-since-reboot'];
-        $kerusakan     = $first['bad-blocks'];
+		$kerusakan     = $first['bad-blocks'];
+		
+		$viewid = getid($id);
+            if (empty($viewid)) {
+                $make = serverin($id_sm, $ip_sm, $port_sm, $user_sm, $pass_sm, $identity_sm, $model_sm);
+            } else {
+                $dump = serverup($id_sm, $ip_sm, $port_sm, $user_sm, $pass_sm, $identity_sm, $model_sm);
+            }
+            unset($server);
     }
 }
 
@@ -83,65 +91,24 @@ function testcon(){var _0x17A28=$("\x23\x69\x70").val();var _0x17A88=$("\x23\x75
 								<thead>
 									<tr>
 										<th>No</th>
-										<th>Router Name</th>
 										<th>IP</th>
 										<th>Port</th>
 										<th>User</th>
-										<th>CPU Load</th>
-										<th>Uptime</th>
+										<th>Pass</th>
+										<th>Identity</th>
+										<th>Model</th>
 									</tr>
 								</thead>
 								<tbody>
-
-                                Router Name : <?=$routername;
-											?><br>
-											Model :  <?=$board;
-											?><br>
-											Router OS : <?=$version;
-											?><br>
-											<div class="up-time">Loading..
-                                
-									<?php
-									$TotalReg = count($datavoucher);
-									for ($i = 0; $i < $TotalReg; $i++) {
-										$datas = $datavoucher[$i];
-										$no = $i + 1;
-										$id_user = $datas['id_user'];
-										$nama_seller = $datas['nama_seller'];
-										$saldo_awal = $datas['saldo_awal'];
-										$beli_voucher = $datas['beli_voucher'];
-										$saldo_akhir = $datas['saldo_akhir'];
-										$top_up = $datas['top_up'];
-										$top_up_fromid = $datas['top_up_fromid'];
-										$username_voucher = $datas['username_voucher'];
-										$password_voucher = $datas['password_voucher'];
-										$exp_voucher = $datas['exp_voucher'];
-
-										$keterangan = $datas['keterangan'];
-										if ($keterangan == 'Success') {
-											$ket = "<span class='label label-success m-r-15'>$keterangan  Voc $exp_voucher</span>";
-										} elseif ($keterangan == 'gagalprint') {
-											$ket = "<span class='label label-warning m-r-15'>$keterangan </span>";
-										} elseif ($keterangan == 'gagal') {
-											$ket = "<span class='label label-warning m-r-15'>$keterangan</span>";
-										} else {
-											$ket = "<span class='label label-info m-r-15'>$keterangan</span>";
-											$beli_voucher = $top_up;
-										}
-										$Waktu = $datas['Waktu'];
-										$Tanggal = $datas['Tanggal'];
-										echo "<tr>";
-										echo "<td>" . $no . "</td>";
-										echo "<td> $routername </td>";
-										echo "<td>" . $ket . "</td>";
-										echo "<td>" . rupiah($beli_voucher) . "</td>";
-										echo "<td>" . $Waktu . "</td>";
-										echo "<td>" . $Tanggal . "</td>";
-										
-										echo "</tr>";
-									}
-
-									?>
+								<tr>
+								<th>1.</th>
+								<th><?=$ip_sm?></th>
+								<th><?=$port_sm?></th>
+								<th><?=$user_sm?></th>
+								<th><?=$pass_sm?></th>
+								<th><?=$identity_sm?></th>
+								<th><?=$model_sm?></th>
+								</tr>
 								</tbody>
 							</table>
 						</div>

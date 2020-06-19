@@ -19,13 +19,15 @@
 //=====================================================START SCRIPT====================//
 	require_once ('system.database.php');
 	$settings=getsettings();
+	$servers=getservers();
 	global $settings;
+	global $servers;
 	$identitiy 			=$settings["Nama_router"];
 	$mikrotik_ip 		=$settings["IP_router"];
 	$mikrotik_username=$settings["Username_router"];
 	$mikrotik_password=decrypturl($settings["Pass_router"]);
 	$mikrotik_port 	=$settings["Port"];
-   $dnsname				=$settings["dnsname"];	
+   	$dnsname				=$settings["dnsname"];	
 	$Name_router 		=$settings["Nama_router"];
 	$owner 				=$settings["Owner"];
 	$id_own 				=$settings["Id_owner"];
@@ -34,5 +36,14 @@
 	$voucher_1			=$settings["Voucher_1"];
 	$Voucher_nonsaldo	=$settings["Voucher_nonsaldo"];
 	$lastupdate       =$settings["Tanggal_diubah"];
+	$id_sm			 = $servers["id_sm"];
+	$ip_sm			 = $servers["ip_sm"];
+	$port_sm		 = $servers["port_sm"];
+	$user_sm 			= $servers["user_sm"];
+	$pass_sm			= $servers["pass_sm"] ;
+	$identity_sm		= $servers["identity_sm"];
+	$model_sm			= $servers["model_sm"];
+
+
 	
 	

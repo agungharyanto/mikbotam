@@ -991,7 +991,7 @@ function makesession($user) {
 
 	]);
 
-	$hasil = $data[u_id];
+	$hasil = $data['u_id'];
 	return $hasil;
 }
 
@@ -1068,6 +1068,23 @@ function getsettings() {
 
 	return $settings;
 }
+
+function getservers() {
+
+	global $mikbotamdata;
+	$servers = $mikbotamdata->get('st_sm', [
+		"id_sm",
+		"ip_sm",
+		"port_sm",
+		"user_sm",
+		"pass_sm",
+		"identity_sm",
+		"model_sm"
+	]);
+
+	return $servers;
+}
+
 function upvoc($sendfungsi, $id) {
 
 	global $mikbotamdata;
@@ -1166,6 +1183,39 @@ function inbot($id, $token, $usernamebot, $namarouter, $ipmik, $usernamemik, $pa
 
 	return $settings;
 }
+
+function serverin($id_sm, $ip_sm, $port_sm, $user_sm, $pass_sm, $identity_sm, $model_sm) {
+	global $mikbotamdata;
+	$servers = $mikbotamdata->insert('st_sm', [
+		"id_sm" => $id_sm,
+		"ip_sm" => $ip_sm,
+		"port_sm" => $port_sm,
+		"user_sm" => $user_sm,
+		"pass_sm" => $pass_sm,
+		"identity_sm" => $identity_sm,
+		"model_sm" => $model_sm,
+
+	]);
+
+	return $servers;
+}
+
+function serverup($id_sm, $ip_sm, $port_sm, $user_sm, $pass_sm, $identity_sm, $model_sm) {
+	global $mikbotamdata;
+	$servers = $mikbotamdata->update('st_sm', [
+		"id_sm" => $id_sm,
+		"ip_sm" => $ip_sm,
+		"port_sm" => $port_sm,
+		"user_sm" => $user_sm,
+		"pass_sm" => $pass_sm,
+		"identity_sm" => $identity_sm,
+		"model_sm" => $model_sm,
+
+	]);
+
+	return $servers;
+}
+
 function sendMessage($id, $text, $token) {
 	$website = "https://api.telegram.org/bot" . $token;
 	$params = [
